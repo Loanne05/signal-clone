@@ -10,8 +10,8 @@ import HomeScreen from './screens/HomeScreen';
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
-  headerStyle: {backgroundColor: "#2C6BED"},
-  headerTitleStyle: {color: "white"},
+  headerStyle: { backgroundColor: "#2C6BED" },
+  headerTitleStyle: { color: "white" },
   headerTintColor: "white",
   headerTitleAlign: 'center',
 }
@@ -19,7 +19,9 @@ const globalScreenOptions = {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={globalScreenOptions}>
+      <Stack.Navigator
+        // initialRouteName="Home"
+        screenOptions={globalScreenOptions}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
