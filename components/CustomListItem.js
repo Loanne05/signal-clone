@@ -4,7 +4,7 @@ import { ListItem, Avatar } from 'react-native-elements'
 
 const CustomListItem = ({id, chatName, enterChat}) => {
     return (
-        <ListItem>
+        <ListItem key={id} bottomDivider>
             <Avatar
                 rounded
                 source={{
@@ -15,7 +15,8 @@ const CustomListItem = ({id, chatName, enterChat}) => {
 
             <ListItem.Content>
                 <ListItem.Title style={{ fontWeight: "800" }}>
-                    Lulu Chat
+                    {chatName} 
+                    {/* luluchat */}
                 </ListItem.Title>
                 <ListItem.Subtitle
                     numberOfLines={1}
@@ -23,8 +24,12 @@ const CustomListItem = ({id, chatName, enterChat}) => {
                     Quick brown fox jumps over the lazy dog.Quick brown fox jumps over the lazy dog
                 </ListItem.Subtitle>
             </ListItem.Content>
+            
+            
 
         </ListItem>
+
+        
     )
 }
 
