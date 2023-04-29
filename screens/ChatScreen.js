@@ -73,8 +73,8 @@ const ChatScreen = ({ navigation, route }) => {
         const unsubscribe = db.collection('chats').doc(route.params.id).
             collection('messages').orderBy('timestamp', 'desc').onSnapshot(snapshot => setMessages(
                 snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    data: doc.data()
+                    id: doc.id, //id messages - firebase
+                    data: doc.data() //data messages - firebase
                 }))
             ));
 

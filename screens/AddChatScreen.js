@@ -11,18 +11,17 @@ const AddChatScreen = ({navigation}) => {
     useLayoutEffect(()=>{
         navigation.setOptions({
             title: "Add a new chat",
-            headerBackTitle: "Chats",
+            headerBackTitle: "Chats", //ios
         });
     }, [navigation]);
 
     const createChat = async () => {
-        await db.collection('chats').add({
+        await db.collection('chats').add({ //store chats collection from firebase
            chatName: input 
         }).then(() => {
             navigation.goBack()
         }).catch((error)=> alert(error));
     } 
-    // para san ba to ahhahah
 
   return (
     <View style={styles.container}>

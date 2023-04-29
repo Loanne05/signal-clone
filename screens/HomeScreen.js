@@ -16,7 +16,7 @@ const HomeScreen = ({ navigation }) => {
     };
 
     useEffect(() => {
-        const unsubscribe = db.collection('chats').onSnapshot(snapshot => (
+        const unsubscribe = db.collection('chats').onSnapshot(snapshot => ( // get data from firebase
             setChats(snapshot.docs.map(doc => ({
                 id: doc.id,
                 data: doc.data()
@@ -82,7 +82,7 @@ const HomeScreen = ({ navigation }) => {
         <View>
             <ScrollView style={styles.container}>
                 {chats.map(({ id, data: { chatName } }) => (
-                    <CustomListItem 
+                    <CustomListItem //display the recently added chat
                     key={id} 
                     id={id} 
                     chatName={chatName}
